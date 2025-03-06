@@ -166,7 +166,7 @@ print(response)
 ## **Useful Links**
 
 - **PyPI Package**: [Yonoma on PyPI](https://pypi.org/project/yonoma/)
-- **GitHub Repository**: [Yonoma GitHub](https://github.com/YonomaHQ/yonoma-email-marketing-python)
+- **GitHub Repository**: [Yonoma GitHub](https://github.com/YonomaHQ/yonoma-python)
 - **Yonoma API Docs**: [Yonoma API Documentation](https://yonoma.io/api-reference/introduction)
 
 ---
