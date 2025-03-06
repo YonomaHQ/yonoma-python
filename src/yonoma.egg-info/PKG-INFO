@@ -1,8 +1,8 @@
 Metadata-Version: 2.2
 Name: yonoma
-Version: 0.1.6
+Version: 1.1
 Summary: A Python client for the Yonoma API
-Home-page: https://github.com/YonomaHQ/yonoma-email-marketing-python
+Home-page: https://github.com/YonomaHQ/yonoma-python
 Author: YONOMAHQ
 Author-email: tools@yonoma.io
 Classifier: Programming Language :: Python :: 3
@@ -36,7 +36,7 @@ pip install yonoma
 
 or manually install from GitHub:
 ```sh
-pip install git+https://github.com/YonomaHQ/yonoma-email-marketing-python
+pip install git+https://github.com/YonomaHQ/yonoma-python
 ```
 
 ---
@@ -52,43 +52,50 @@ from yonoma import Yonoma
 yonoma = Yonoma(api_key="YOUR-API-KEY")
 ```
 
+### **Send your email**
+```python
+response = yonoma.email.send({
+    'from_email': 'updates@yonoma.io',
+     'to_email': 'email@yourdomain.com',
+     'subject':"Welcome to Yonoma - You're In!",
+     'mail_template': "We're excited to welcome you to Yonoma! Your successful signup marks the beginning of what we hope will be an exceptional journey."
+    })
+print(response)
+```
+
 ---
 
 # **Features**
 
 ## **Lists**
 
-### **Create a new lists**
+### **Create a new list**
 ```python
-from yonoma.lists import Lists
-
-Lists = Lists(yonoma)
-
-response = Lists.create(list_name="New lists")
+response = yonoma.lists.create('list_name':'New group')
 print(response)
 ```
 
 ### **Get a list of Lists**
 ```python
-response = Lists.list_all()
+response = yonoma.lists.list()
 print(response)
 ```
 
-### **Retrieve a specific lists**
+### **Retrieve a specific list**
 ```python
-response = Lists.retrieve(list_id="list_id")
+response = yonoma.lists.retrieve("list_id")
 print(response)
 ```
 
-### **Update a lists**
+### **Update a list**
 ```python
-response = Lists.update(list_id="A0SADFD6PJ", list_name="Updated lists Name")
+response = yonoma.lists.update('list_id', {'list_name': 'Upadated list name'})
 print(response)
 ```
 
-### **Delete a lists**
+### **Delete a list**
 ```python
-response = Lists.delete(list_id="list_id")
+response = yonoma.lists.delete('list_id')
 print(response)
 ```
 
@@ -98,35 +105,31 @@ print(response)
 
 ### **Create a new tag**
 ```python
-from yonoma.tags import Tags
-
-Tags = Tags(yonoma)
-
-response = Tags.create(tag_name="New Tag")
+response = yonoma.tags.create({'tag_name': 'New tag'})
 print(response)
 ```
 
 ### **Get a list of tags**
 ```python
-response = Tags.list_all()
+response = yonoma.tags.list()
 print(response)
 ```
 
 ### **Retrieve a specific tag**
 ```python
-response = Tags.retrieve(tag_id="TAG_ID")
+response = yonoma.tags.retrieve('tag_id')
 print(response)
 ```
 
 ### **Update a tag**
 ```python
-response = Tags.update(tag_id="TAG_ID", tag_name="Updated Tag Name")
+response = yonoma.tags.update('tag_id', {'tag_name': 'Updated Tag Name'})
 print(response)
 ```
 
 ### **Delete a tag**
 ```python
-response = Tags.delete(tag_id="TAG_ID")
+response = Tags.delete('tag_id')
 print(response)
 ```
 
@@ -136,23 +139,21 @@ print(response)
 
 ### **Create a new contact**
 ```python
-from yonoma.contacts import Contacts
-
-contacts = Contacts(yonoma)
-
-response = contacts.create(
-    list_id="list_id",
-    email="email@example.com",
-    status="Subscribed",  # or "Unsubscribed"
-    data={
-        "firstName": "Contact",
-        "lastName": "One",
-        "phone": "1234567890",
-        "address": "123, NY street",
-        "city": "NY City",
-        "state": "NY",
-        "country": "US",
-        "zipcode": "10001"
+response = yonoma.contacts.create("list_id",
+    {
+        email: "email@example.com",
+        status: "Subscribed" | "Unsubscribed",
+        data: {
+            firstName: string,
+            lastName: string,
+            phone: string,
+            gender: string,
+            address: string,
+            city: string,
+            state: string,
+            country: string,
+            zipcode: string,
+        }
     }
 )
 print(response)
@@ -160,23 +161,26 @@ print(response)
 
 ### **Update a contact**
 ```python
-response = contacts.update(
-    list_id="list_id",
-    contact_id="CONTACT_ID",
-    status="Subscribed"  # or "Unsubscribed"
+response = yonoma.contacts.update('list_id','contact_id',{
+    'status': "Subscribed" | "Unsubscribed" 
+}
 )
 print(response)
 ```
 
 ### **Add a tag to a contact**
 ```python
-response = contacts.add_tag(contact_id="CONTACT_ID", tag_id="TAG_ID")
+response = yonoma.contacts.addtag('contact_id', {
+    'tag_id': 'Tag id'
+})
 print(response)
 ```
 
 ### **Remove a tag from a contact**
 ```python
-response = contacts.remove_tag(contact_id="CONTACT_ID", tag_id="TAG_ID")
+response = yonoma.contacts.removetag('contact_id', {
+    'tag_id': 'Tag id'
+})
 print(response)
 ```
 
@@ -195,5 +199,5 @@ This package is licensed under the **MIT License**.
 
 ---
 
-This is the **official Python SDK** for **Yonoma Email Marketing**, providing seamless API integrations. ðŸš€
+This is the **official Python SDK** for **Yonoma Email Marketing**, providing seamless API integrations.
 

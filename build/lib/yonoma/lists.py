@@ -2,7 +2,7 @@ class Lists:
     def __init__(self, client):
         self.client = client
 
-    def list_all(self):
+    def list(self):
         """Retrieve all lists."""
         return self.client.request("GET", "/lists/list")
 

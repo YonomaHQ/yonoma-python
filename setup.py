@@ -2,8 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="yonoma",
-    version="0.1.6",
-    # packages=find_packages(),
+    version="1.1",
     package_dir={'': 'src'}, 
     packages=find_packages(where='src'),
     install_requires=["requests"],
@@ -12,7 +11,7 @@ setup(
     description="A Python client for the Yonoma API",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/YonomaHQ/yonoma-email-marketing-python",
+    url="https://github.com/YonomaHQ/yonoma-python",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

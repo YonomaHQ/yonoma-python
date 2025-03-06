@@ -2,7 +2,7 @@ class Tags:
     def __init__(self, client):
         self.client = client
 
-    def list_all(self):
+    def list(self):
         """Retrieve all tags."""
         return self.client.request("GET", "/tags/list")
 

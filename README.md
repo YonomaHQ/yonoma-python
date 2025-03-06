@@ -46,7 +46,7 @@ print(response)
 
 ## **Lists**
 
-### **Create a new lists**
+### **Create a new list**
 ```python
 response = yonoma.lists.create('list_name':'New group')
 print(response)
@@ -54,23 +54,23 @@ print(response)
 
 ### **Get a list of Lists**
 ```python
-response = yonoma.lists.list_all()
+response = yonoma.lists.list()
 print(response)
 ```
 
-### **Retrieve a specific lists**
+### **Retrieve a specific list**
 ```python
 response = yonoma.lists.retrieve("list_id")
 print(response)
 ```
 
-### **Update a lists**
+### **Update a list**
 ```python
 response = yonoma.lists.update('list_id', {'list_name': 'Upadated list name'})
 print(response)
 ```
 
-### **Delete a lists**
+### **Delete a list**
 ```python
 response = yonoma.lists.delete('list_id')
 print(response)
@@ -88,7 +88,7 @@ print(response)
 
 ### **Get a list of tags**
 ```python
-response = yonoma.tags.list_all()
+response = yonoma.tags.list()
 print(response)
 ```
 
@@ -147,7 +147,7 @@ print(response)
 
 ### **Add a tag to a contact**
 ```python
-response = yonoma.contacts.add_tag('contact_id', {
+response = yonoma.contacts.addtag('contact_id', {
     'tag_id': 'Tag id'
 })
 print(response)
@@ -155,7 +155,7 @@ print(response)
 
 ### **Remove a tag from a contact**
 ```python
-response = yonoma.contacts.remove_tag('contact_id', {
+response = yonoma.contacts.removetag('contact_id', {
     'tag_id': 'Tag id'
 })
 print(response)
@@ -166,7 +166,7 @@ print(response)
 ## **Useful Links**
 
 - **PyPI Package**: [Yonoma on PyPI](https://pypi.org/project/yonoma/)
-- **GitHub Repository**: [Yonoma GitHub](https://github.com/YonomaHQ/yonoma-python)
+- **GitHub Repository**: [Yonoma GitHub](https://github.com/YonomaHQ/yonoma-email-marketing-python)
 - **Yonoma API Docs**: [Yonoma API Documentation](https://yonoma.io/api-reference/introduction)
 
 ---

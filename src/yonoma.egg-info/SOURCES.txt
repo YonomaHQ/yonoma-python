@@ -3,6 +3,7 @@ setup.py
 src/yonoma/__init__.py
 src/yonoma/client.py
 src/yonoma/contacts.py
+src/yonoma/email.py
 src/yonoma/exceptions.py
 src/yonoma/lists.py
 src/yonoma/tags.py
