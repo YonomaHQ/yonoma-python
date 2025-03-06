@@ -4,7 +4,7 @@ The official **Python** client library for the **Yonoma Email Marketing API**.
 
 ---
 
-## Installation**
+## Installation
 
 ### Install via **pip**:
 ```sh
