@@ -120,17 +120,15 @@ response = yonoma.contacts.create("list_id",
     {
         email: "email@example.com",
         status: "Subscribed" | "Unsubscribed",
-        data: {
-            firstName: string,
-            lastName: string,
-            phone: string,
-            gender: string,
-            address: string,
-            city: string,
-            state: string,
-            country: string,
-            zipcode: string,
-        }
+        firstName: string, //optional
+        lastName: string, //optional
+        phone: string, //optional
+        gender: string, //optional
+        address: string, //optional
+        city: string, //optional
+        state: string, //optional
+        country: string, //optional
+        zipcode: string //optional
     }
 )
 print(response)
