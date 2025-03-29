@@ -20,4 +20,4 @@ class Tags:
 
     def delete(self, tag_id):
         """Delete a tag."""
-        return self.client.request("POST", f"/tags/{tag_id}/delete")
+        return self.client.request("DELETE", f"/tags/{tag_id}/delete")
