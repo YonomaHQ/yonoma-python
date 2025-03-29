@@ -20,6 +20,6 @@ class Lists:
 
     def delete(self, list_id):
         """Delete a list."""
-        return self.client.request("POST", f"/lists/{list_id}/delete")
+        return self.client.request("DELETE", f"/lists/{list_id}/delete")
 
 
